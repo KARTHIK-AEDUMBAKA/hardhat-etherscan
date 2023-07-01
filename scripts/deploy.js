@@ -9,7 +9,7 @@ async function main() {
     console.log("Deploying SimpleStorage.....")
     const SimpleStorage = await SimpleStorageFactory.deploy()
     await SimpleStorage.waitForDeployment()
-    let address = await SimpleStorage.getAddress()
+    address = await SimpleStorage.getAddress()
     console.log(`deployed contract to ${address}`)
     console.log("1")
     console.log(`chainId: ${network.config.chainId}`)
@@ -19,7 +19,7 @@ async function main() {
         const deploytransaction =
             await SimpleStorage.deploymentTransaction().wait(6)
         console.log("ok..")
-        let address = await SimpleStorage.getAddress()
+        address = await SimpleStorage.getAddress()
         await verify(address, [])
     }
     console.log("2")
